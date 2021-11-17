@@ -11,7 +11,10 @@ export default {
     title: APP_NAME,
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale==1, maximum-scale=1' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover',
+      },
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
@@ -24,7 +27,7 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: ['@/assets/css/main.css', 'animate.css'],
+  css: ['@/assets/css/main.css', 'animate.css', '@icon-park/vue/styles/index.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
@@ -34,7 +37,6 @@ export default {
     '@/plugins/directives',
     '@/plugins/axios',
     '@/plugins/router-after-each',
-    '@/plugins/font-awesome',
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -113,28 +115,45 @@ export default {
       plugins: [
         ['@babel/plugin-proposal-private-methods', { loose: true }],
         [
-          [
-            'import',
-            {
-              libraryName: 'vant',
-              libraryDirectory: 'es',
-              style: true,
-            },
-            'vant',
-          ],
+          'import',
+          {
+            libraryName: 'vant',
+            libraryDirectory: 'es',
+            style: true,
+          },
+          'vant',
+        ],
+        [
+          'import',
+          {
+            libraryName: '@icon-park/vue',
+            libraryDirectory: 'es/icons',
+            camel2DashComponentName: false,
+          },
         ],
       ],
     },
 
-    extend(config) {
-      // alias
-      config.resolve.alias.styles = join(config.resolve.alias.assets, 'scss');
+    loaders: {
+      less: {
+        modifyVars: {
+          'button-primary-background-color': '#1989fa',
+        },
+      },
+    },
+
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        'postcss-px-to-viewport': {
+          viewportWidth: 1920,
+          selectorBlackList: ['.ignore'],
+        },
+      },
     },
 
     transpile: [],
   },
-
-  // buildDir: 'stb-web',
 
   env: {},
 
@@ -156,7 +175,7 @@ export default {
   },
 
   server: {
-    port: 6400,
+    port: 3100,
     host: '0.0.0.0',
   },
 

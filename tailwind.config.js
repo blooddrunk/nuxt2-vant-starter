@@ -17,6 +17,16 @@ module.exports = {
       colors: {
         inherit: 'inherit',
 
+        primary: {
+          DEFAULT: 'var(--color-primary)',
+        },
+
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+        },
+
+        light: 'var(--color-light)',
+
         gold: {
           DEFAULT: 'var(--color-gold)',
           light: 'var(--color-gold-light)',
@@ -24,8 +34,6 @@ module.exports = {
           dark: 'var(--color-gold-dark)',
           darker: 'var(--color-gold-darker)',
         },
-
-        light: 'var(--color-light)',
       },
 
       spacing: {

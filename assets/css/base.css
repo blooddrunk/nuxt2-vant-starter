@@ -1,14 +1,14 @@
 @layer base {
   :root {
-    --color-primary: '#B86A4B';
-    --color-secondary: '#B86A4B';
-    --color-light: ‘#F7F9FA;
+    --color-primary: #b86a4b;
+    --color-secondary: #b86a4b;
+    --color-light: #f7f9fa;
 
-    --color-gold: '#F7E9CF';
-    --color-gold-light: '#FCF6E9';
-    --color-gold-lighter: '#F7E9CF';
-    --color-gold-dark: '#FFA849';
-    --color-gold-darker: '#834C1F';
+    --color-gold: #f7e9cf;
+    --color-gold-light: #fcf6e9;
+    --color-gold-lighter: #f7e9cf;
+    --color-gold-dark: #ffa849;
+    --color-gold-darker: #834c1f;
   }
 
   html {

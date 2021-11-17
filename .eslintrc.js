@@ -10,8 +10,7 @@ module.exports = {
 
   parserOptions: {},
 
-  // extends: ['@nuxtjs', 'plugin:prettier/recommended', 'plugin:nuxt/recommended'],
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+  extends: ['plugin:nuxt/recommended', 'prettier'],
 
   plugins: [],
 
