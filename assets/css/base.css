@@ -1,0 +1,31 @@
+@layer base {
+  :root {
+    --color-primary: '#B86A4B';
+    --color-secondary: '#B86A4B';
+    --color-light: ‘#F7F9FA;
+
+    --color-gold: '#F7E9CF';
+    --color-gold-light: '#FCF6E9';
+    --color-gold-lighter: '#F7E9CF';
+    --color-gold-dark: '#FFA849';
+    --color-gold-darker: '#834C1F';
+  }
+
+  html {
+    @apply tw-font-sans tw-text-white tw-antialiased;
+    @apply tw-overflow-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply tw-w-2;
+    @apply tw-h-2;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply tw-bg-gold tw-rounded-md;
+  }
+
+  svg {
+    display: initial;
+  }
+}
